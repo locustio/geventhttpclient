@@ -23,7 +23,6 @@ jobs:
       services:
         - docker
       os: osx
-      python: "3.6"
       script:
         - pip install cibuildwheel==0.6.0
         - cibuildwheel --output-dir wheelhouse
