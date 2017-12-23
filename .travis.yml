@@ -23,6 +23,12 @@ jobs:
       services:
         - docker
       os: osx
+      install:
+        # Python 3 is needed to run cibuildwheel
+        - if [ "${TRAVIS_OS_NAME:-}" == "osx" ]; then
+            brew update;
+            brew install python3;
+          fi
+        - pip3 install cibuildwheel==0.6.0
       script:
-        - pip install cibuildwheel==0.6.0
         - cibuildwheel --output-dir wheelhouse
