@@ -7,11 +7,6 @@ install:
   - "pip install ."
 script: py.test src/geventhttpclient/tests
 
-env:
-  global:
-    - TWINE_USERNAME=heyman
-    # Note: TWINE_PASSWORD is set in Travis settings
-
 jobs:
   include:
     - stage: build
