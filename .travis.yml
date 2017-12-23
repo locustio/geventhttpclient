@@ -23,6 +23,7 @@ jobs:
       services:
         - docker
       os: osx
+      osx_image: xcode8.3
       install:
         # Python 3 is needed to run cibuildwheel
         - if [ "${TRAVIS_OS_NAME:-}" == "osx" ]; then
