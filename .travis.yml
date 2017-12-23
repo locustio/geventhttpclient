@@ -15,8 +15,9 @@ jobs:
         - docker
       os: linux
       python: "3.6"
-      script:
+      install:
         - pip install cibuildwheel==0.6.0
+      script:
         - cibuildwheel --output-dir wheelhouse
     - stage: build
       sudo: required
