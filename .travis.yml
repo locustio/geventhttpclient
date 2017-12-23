@@ -20,8 +20,6 @@ jobs:
         - cibuildwheel --output-dir wheelhouse
     - stage: build
       sudo: required
-      services:
-        - docker
       os: osx
       osx_image: xcode8.3
       language: null
