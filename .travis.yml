@@ -7,6 +7,11 @@ install:
   - "pip install ."
 script: py.test src/geventhttpclient/tests
 
+env:
+  global:
+    - TWINE_USERNAME=heyman
+    # Note: TWINE_PASSWORD is set in Travis settings
+
 jobs:
   include:
     - stage: build
@@ -34,3 +39,8 @@ jobs:
         - pip3 install cibuildwheel==0.6.0
       script:
         - cibuildwheel --output-dir wheelhouse
+        # Upload to PyPI on tags
+        - if [ "${TRAVIS_TAG:-}" != "" ]; then
+            pip3 install twine;
+            python3 -m twine upload --skip-existing wheelhouse/*;
+          fi
