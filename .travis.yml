@@ -24,6 +24,11 @@ jobs:
         - pip install cibuildwheel==0.6.0
       script:
         - cibuildwheel --output-dir wheelhouse
+        # Upload to PyPI on tags
+        - if [ "${TRAVIS_TAG:-}" != "" ]; then
+            pip install twine;
+            python -m twine upload --skip-existing wheelhouse/*;
+          fi
     - stage: build
       sudo: required
       os: osx
