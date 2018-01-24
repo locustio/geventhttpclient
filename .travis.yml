@@ -19,6 +19,8 @@ jobs:
         - pip install cibuildwheel==0.6.0
       script:
         - cibuildwheel --output-dir wheelhouse
+        # Build sdist distribution as well
+        - python setup.py sdist -d wheelhouse
         # Upload to PyPI on tags
         - if [ "${TRAVIS_TAG:-}" != "" ]; then
             pip install twine;
