@@ -1,6 +1,11 @@
 # geventhttpclient
 
-[![Build Status](https://travis-ci.org/gwik/geventhttpclient.svg?branch=master)](https://travis-ci.org/gwik/geventhttpclient)
+## Fork
+
+**This fork automatically builds wheels and uploads to the geventhttpclient-wheels package on PyPI**
+
+
+[![Build Status](https://travis-ci.org/locustio/geventhttpclient.svg?branch=master)](https://travis-ci.org/locustio/geventhttpclient)
 
 A high performance, concurrent HTTP client library for python using 
 [gevent](http://gevent.org).

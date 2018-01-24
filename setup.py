@@ -43,12 +43,12 @@ if sys.hexversion < 0x02070900:
     ]
 
 
-setup(name='geventhttpclient',
+setup(name='geventhttpclient-wheels',
       version = '1.3.1dev',
-      description = 'http client library for gevent',
+      description = 'Pre-built wheels for geventhttpclient',
       long_description = DESC,
       url="http://github.com/gwik/geventhttpclient",
-      author="Antonin Amand",
+      author="Antonin Amand (Fork maintained by the Locust project)",
       author_email="antonin.amand@gmail.com",
       packages=find_packages('src'),
       license='LICENSE-MIT',
