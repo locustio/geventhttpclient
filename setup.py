@@ -43,7 +43,7 @@ if sys.hexversion < 0x02070900:
     ]
 
 
-setup(name='geventhttpclient-wheels',
+setup(name='geventhttpclient',
       version = '1.3.1dev1',
       description = 'Pre-built wheels for geventhttpclient',
       long_description = DESC,
