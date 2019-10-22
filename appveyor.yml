@@ -11,4 +11,4 @@ artifacts:
   - path: "wheelhouse\\*.whl"
     name: Wheels
 environment:
-  - CIBW_SKIP="cp33 cp34"
+  CIBW_SKIP: "cp33 cp34"
