@@ -17,9 +17,9 @@ jobs:
       services:
         - docker
       os: linux
-      python: "3.6"
+      python: "3.7"
       install:
-        - pip install cibuildwheel==0.8.0
+        - pip install cibuildwheel==0.12.0
       script:
         - cibuildwheel --output-dir wheelhouse
         # Build sdist distribution as well
@@ -30,7 +30,7 @@ jobs:
             python -m twine upload --skip-existing wheelhouse/*;
           fi
       env:
-        - CIBW_SKIP=cp33
+        - CIBW_SKIP="cp33 cp34"
     - stage: build
       sudo: required
       os: osx
@@ -43,7 +43,7 @@ jobs:
             brew update;
             brew upgrade python;
           fi
-        - pip install cibuildwheel==0.8.0
+        - pip install cibuildwheel==0.12.0
       script:
         - cibuildwheel --output-dir wheelhouse
         # Upload to PyPI on tags
@@ -52,4 +52,4 @@ jobs:
             python -m twine upload --skip-existing wheelhouse/*;
           fi
       env:
-        - CIBW_SKIP=cp33
+        - CIBW_SKIP="cp33 cp34"
