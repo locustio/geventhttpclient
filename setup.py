@@ -42,7 +42,6 @@ if sys.hexversion < 0x02070900:
         'backports.ssl_match_hostname',
     ]
 
-
 setup(name='geventhttpclient-wheels',
       version = '1.3.1dev1',
       description = 'Pre-built wheels for geventhttpclient',
