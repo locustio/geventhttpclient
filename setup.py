@@ -43,7 +43,7 @@ if sys.hexversion < 0x02070900:
     ]
 
 setup(name='geventhttpclient-wheels',
-      version = '1.3.1dev2',
+      version = '1.3.1dev3',
       description = 'Pre-built wheels for geventhttpclient',
       long_description = DESC,
       url="http://github.com/gwik/geventhttpclient",
