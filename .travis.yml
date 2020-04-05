@@ -17,9 +17,9 @@ jobs:
       services:
         - docker
       os: linux
-      python: "3.7"
+      python: "3.8"
       install:
-        - pip install cibuildwheel==0.12.0
+        - pip install cibuildwheel==1.3.0
       script:
         - cibuildwheel --output-dir wheelhouse
         # Build sdist distribution as well
@@ -43,7 +43,7 @@ jobs:
             brew update;
             brew upgrade python;
           fi
-        - pip install cibuildwheel==0.12.0
+        - pip install cibuildwheel==1.3.0
       script:
         - cibuildwheel --output-dir wheelhouse
         # Upload to PyPI on tags
