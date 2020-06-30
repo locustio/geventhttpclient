@@ -363,7 +363,7 @@ class UserAgent(object):
                     # Let's collect some debug info
                     e.response = resp
                     e.request = req
-                    e.http_log = self._conversation_str(req.url, resp, payload=req.payload)
+                    e.http_log = self._conversation_str(req.url, resp)
                     resp.release()
                     last_error = self._handle_error(e, url=req.url)
                     break # Continue with next retry
@@ -421,7 +421,10 @@ class UserAgent(object):
             ret = 'REQUEST: ' + url + '\n' + resp._sent_request
             if payload:
                 if isinstance(payload, six.binary_type):
-                    ret += payload.decode('utf-8') + '\n\n'
+                    try:
+                        ret += payload.decode('utf-8') + '\n\n'
+                    except UnicodeDecodeError:
+                        pass
                 elif isinstance(payload, six.text_type):
                     ret += payload + '\n\n'
             ret += 'RESPONSE: ' + resp._response.version + ' ' + \
