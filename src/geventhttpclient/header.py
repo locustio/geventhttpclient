@@ -1,4 +1,4 @@
-from collections import Mapping, MutableMapping
+from collections.abc import Mapping, MutableMapping
 import six
 
 _dict_setitem = dict.__setitem__
