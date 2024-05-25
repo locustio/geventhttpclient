@@ -1,5 +1,7 @@
 # geventhttpclient
 
+THIS REPO HAS BEEN ARCHIVED because upstream gevenhttpclient is alive and kicking again!
+
 ## Fork
 
 **This fork automatically builds wheels and uploads to the geventhttpclient-wheels package on PyPI**
